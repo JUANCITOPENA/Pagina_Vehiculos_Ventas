@@ -11,7 +11,7 @@ El archivo JSON también está incluido localmente en el repositorio, ofreciendo
 
 ### Portada:
 
-![Vehículos](assets/VEHICULOS.png)
+![Vehículos](VEHICULOS.png)
 
 ### Características principales:
 
