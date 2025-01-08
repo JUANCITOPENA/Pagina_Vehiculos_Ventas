@@ -1,31 +1,32 @@
-// Función para obtener datos de vehículos desde un archivo JSON alojado en un repositorio remoto
+let vehicles = []; // Guardar los vehículos globalmente
+let imageModal = null; // Modal para mostrar imagen del vehículo
+let contactModal = null; // Modal para mostrar formulario de contacto
+
+// Función para obtener los vehículos desde un archivo JSON externo
 async function fetchVehicles() {
-    try {
-        // Realiza una solicitud HTTP para obtener los datos del archivo JSON
-        const response = await fetch('https://raw.githubusercontent.com/JUANCITOPENA/Pagina_Vehiculos_Ventas/main/vehiculos.json');
-        if (!response.ok) {
-            // Verifica si la respuesta de la red es válida, si no, lanza un error
-            throw new Error('Network response was not ok ' + response.statusText);
+    if (vehicles.length === 0) { // Solo obtener los datos si aún no están almacenados
+        try {
+            // Realizamos una solicitud fetch para obtener los vehículos
+            const response = await fetch('https://raw.githubusercontent.com/JUANCITOPENA/Pagina_Vehiculos_Ventas/main/vehiculos.json');
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText); // Si hay error en la respuesta
+            }
+            vehicles = await response.json(); // Guardamos los vehículos en la variable global
+        } catch (error) {
+            console.error('Hubo un problema con la solicitud fetch:', error); // Manejo de errores
+            vehicles = []; // Asegurarse de que siempre haya algo que usar
         }
-        // Convierte la respuesta en formato JSON
-        const data = await response.json();
-        return data; // Devuelve los datos en formato JSON
-    } catch (error) {
-        // Captura y muestra cualquier error que ocurra durante la solicitud
-        console.error('Hubo un problema con la solicitud fetch:', error);
-        return []; // Retorna un arreglo vacío en caso de error
     }
+    return vehicles; // Devuelve los vehículos cargados
 }
 
-// Función para crear una tarjeta HTML para cada vehículo
+// Función para crear una tarjeta de vehículo en formato HTML
 function createVehicleCard(vehicle) {
     return `
         <div class="card vehicle-card">
             <div class="card-body d-flex flex-column flex-md-row">
                 <div class="mr-md-3" style="flex: 1;">
-                    <!-- Imagen del logo del vehículo -->
                     <img src="${vehicle.logo}" alt="${vehicle.marca} Logo" class="img-fluid logo-image mb-3" style="object-fit: contain; max-width: 100%; max-height: 100%;">
-                    <!-- Información principal del vehículo -->
                     <h5 class="card-title">${vehicle.modelo} (${vehicle.marca})</h5>
                     <p class="card-text"><strong>Tipo:</strong> ${vehicle.tipo}</p>
                     <p class="card-text"><strong>Características:</strong> ${vehicle.caracteristicas}</p>
@@ -33,83 +34,122 @@ function createVehicleCard(vehicle) {
                     <p class="card-text"><strong>Combustible:</strong> ${vehicle.combustible}</p>
                     <p class="card-text"><strong>Precio Venta:</strong> $${vehicle.precio_venta}</p>
                     <p class="card-text"><strong>Existencias:</strong> ${vehicle.existencia}</p>
-                    <!-- Botón para abrir el modal de contacto -->
                     <button type='button' class='btn btn-info mt-2' onclick='openContactModal("${vehicle.modelo}")'>Contacto</button>
                 </div>
-                <!-- Imagen del vehículo con opción para abrir en un modal -->
                 <img src="${vehicle.imagen}" alt="${vehicle.modelo}" class="img-fluid vehicle-image mb-3" style="object-fit: contain; max-width: 100%; max-height: 100%;" onclick="openImageModal('${vehicle.imagen}')">
             </div>
         </div>
     `;
 }
 
-// Función para mostrar la imagen en un modal emergente
-function openImageModal(imageUrl) {
-    const modalImage = document.getElementById('modalVehicleImage');
-    modalImage.src = imageUrl; // Establece la URL de la imagen en el modal
-    $('#vehicleImageModal').modal('show'); // Muestra el modal
+// Inicializamos los modales una sola vez cuando el DOM está listo
+document.addEventListener('DOMContentLoaded', function() {
+    imageModal = new bootstrap.Modal(document.getElementById('vehicleImageModal')); // Modal de imagen
+    contactModal = new bootstrap.Modal(document.getElementById('contactModal')); // Modal de contacto
+
+    // Configuramos los listeners de los modales
+    setupModalListeners('vehicleImageModal', imageModal);
+    setupModalListeners('contactModal', contactModal);
+
+    loadVehicles(); // Cargar los vehículos al inicio
+});
+
+// Función para configurar los listeners de los botones de cierre en los modales
+function setupModalListeners(modalId, modalInstance) {
+    const modalElement = document.getElementById(modalId);
+
+    // Listener para los botones de cerrar del modal
+    modalElement.querySelectorAll('[data-bs-dismiss="modal"]').forEach(button => {
+        button.addEventListener('click', () => modalInstance.hide());
+    });
+
+    // Cerrar el modal al hacer clic fuera de él
+    modalElement.addEventListener('click', function(event) {
+        if (event.target === modalElement) {
+            modalInstance.hide();
+        }
+    });
+
+    // Limpiar el contenido del modal al cerrarlo
+    modalElement.addEventListener('hidden.bs.modal', function() {
+        if (modalId === 'vehicleImageModal') {
+            document.getElementById('modalVehicleImage').src = ''; // Limpiar imagen
+        }
+    });
 }
 
-// Función para buscar vehículos según un término ingresado en el campo de búsqueda
+// Función para abrir el modal de imagen con la imagen seleccionada
+function openImageModal(imageUrl) {
+    document.getElementById('modalVehicleImage').src = imageUrl; // Asignamos la imagen al modal
+    imageModal.show(); // Mostramos el modal
+}
+
+// Función para abrir el modal de contacto y llenar el modelo del vehículo
+function openContactModal(vehicleModel) {
+    document.getElementById('vehicleModel').value = vehicleModel; // Rellenamos el campo del modelo del vehículo
+    populateVehicleModels(); // Llenamos el selector de modelos
+    contactModal.show(); // Mostramos el modal de contacto
+}
+
+// Función para realizar la búsqueda de vehículos basándose en el texto introducido
 async function searchVehicles() {
-    const searchInput = document.getElementById('searchInput').value.toLowerCase(); // Obtiene y normaliza el texto ingresado
-    const vehicles = await fetchVehicles(); // Obtiene la lista de vehículos
-    // Filtra los vehículos que coinciden con la búsqueda en marca, modelo o tipo
+    const searchInput = document.getElementById('searchInput').value.toLowerCase(); // Convertimos a minúsculas el texto ingresado
     const filteredVehicles = vehicles.filter(vehicle => 
         vehicle.marca.toLowerCase().includes(searchInput) || 
         vehicle.modelo.toLowerCase().includes(searchInput) ||
         vehicle.tipo.toLowerCase().includes(searchInput)
     );
-    // Genera las tarjetas para los vehículos filtrados
-    const vehicleCards = filteredVehicles.map(vehicle => createVehicleCard(vehicle)).join('');
-    document.getElementById('vehicleCards').innerHTML = vehicleCards; // Muestra las tarjetas en el DOM
+    const vehicleCards = filteredVehicles.map(createVehicleCard).join(''); // Crear tarjetas de los vehículos filtrados
+    document.getElementById('vehicleCards').innerHTML = vehicleCards; // Mostrar las tarjetas filtradas
 }
 
-// Función para limpiar el campo de búsqueda y recargar todos los vehículos
+// Función para limpiar la búsqueda y recargar todos los vehículos
 function clearSearch() {
-    document.getElementById('searchInput').value = ''; // Limpia el campo de búsqueda
-    loadVehicles(); // Carga nuevamente todos los vehículos
+    document.getElementById('searchInput').value = ''; // Limpiar el campo de búsqueda
+    loadVehicles(); // Recargar todos los vehículos al borrar la búsqueda
 }
 
-// Función para cargar y mostrar todos los vehículos al iniciar la aplicación
+// Función para cargar todos los vehículos al iniciar la página
 async function loadVehicles() {
-    const vehicles = await fetchVehicles(); // Obtiene la lista de vehículos
-    const vehicleCards = vehicles.map(vehicle => createVehicleCard(vehicle)).join(''); // Genera las tarjetas de vehículos
-    document.getElementById('vehicleCards').innerHTML = vehicleCards; // Inserta las tarjetas en el DOM
+    const vehicles = await fetchVehicles(); // Obtener los vehículos
+    const vehicleCards = vehicles.map(createVehicleCard).join(''); // Crear tarjetas de todos los vehículos
+    document.getElementById('vehicleCards').innerHTML = vehicleCards; // Mostrar todas las tarjetas
 }
 
-// Función para abrir el modal de contacto y configurar el modelo del vehículo seleccionado
-function openContactModal(vehicleModel) {
-    document.getElementById('vehicleModel').value = vehicleModel; // Asigna el modelo al campo del formulario
-    populateVehicleModels(); // Rellena la lista desplegable con todos los modelos
-    $('#contactModal').modal('show'); // Muestra el modal
-}
-
-// Función para rellenar el selector de modelos en el formulario de contacto
+// Función para llenar el selector de modelos de vehículos
 async function populateVehicleModels() {
     const selectElement = document.getElementById('vehicleModel');
-    selectElement.innerHTML = ''; // Limpia las opciones actuales del selector
+    selectElement.innerHTML = ''; // Limpiar el contenido del selector
 
-    const vehicles = await fetchVehicles(); // Obtiene la lista de vehículos
+    const vehicles = await fetchVehicles(); // Obtener los vehículos
     vehicles.forEach(vehicle => {
         const option = document.createElement('option');
-        option.value = vehicle.modelo; // Asigna el valor al modelo
-        option.textContent = vehicle.modelo; // Asigna el texto visible al modelo
-        selectElement.appendChild(option); // Agrega la opción al selector
+        option.value = vehicle.modelo; // Asignamos el valor del modelo
+        option.textContent = vehicle.modelo; // Asignamos el nombre del modelo
+        selectElement.appendChild(option); // Agregamos la opción al selector
     });
 }
 
-// Función para manejar el envío del formulario de contacto
-function submitForm() {
-    const name = document.getElementById('customerName').value; // Obtiene el nombre del cliente
-    const email = document.getElementById('customerEmail').value; // Obtiene el correo electrónico
-    const model = document.getElementById('vehicleModel').value; // Obtiene el modelo seleccionado
-    const message = document.getElementById('message').value; // Obtiene el mensaje del cliente
+// Función para enviar el formulario de contacto
+function submitForm(event) {
+    event.preventDefault(); // Evitar el envío del formulario
 
-    // Muestra una alerta con los datos del formulario
-    alert(`Formulario enviado: \nNombre: ${name} \nEmail: ${email} \nModelo: ${model} \nMensaje: ${message}`);
-    $('#contactModal').modal('hide'); // Cierra el modal
+    const name = document.getElementById('customerName').value; // Obtener el nombre del cliente
+    const email = document.getElementById('customerEmail').value; // Obtener el email del cliente
+    const model = document.getElementById('vehicleModel').value; // Obtener el modelo del vehículo
+    const message = document.getElementById('message').value; // Obtener el mensaje
+
+    alert(`Formulario enviado: \nNombre: ${name} \nEmail: ${email} \nModelo: ${model} \nMensaje: ${message}`); // Mostrar alerta con los datos del formulario
+    
+    if (contactModal) {
+        contactModal.hide(); // Cerrar el modal de contacto
+    }
 }
 
-// Llama a la función para cargar los vehículos al inicio de la aplicación
-loadVehicles();
+// Agregar un manejador global para cerrar los modales cuando se presiona la tecla ESC
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') { // Si se presiona ESC
+        if (imageModal) imageModal.hide(); // Cerrar modal de imagen
+        if (contactModal) contactModal.hide(); // Cerrar modal de contacto
+    }
+});
