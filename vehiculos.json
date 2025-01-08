@@ -654,8 +654,8 @@
         "precio_compra": 150000,
         "precio_venta": 185000,
         "existencia": 500
-      },
-      {
+    },
+    {
         "codigo": 1042,
         "tipo": "Sedán de lujo 🚗",
         "marca": "Mercedes-Benz",
@@ -670,8 +670,8 @@
         "precio_compra": 65000,
         "precio_venta": 80000,
         "existencia": 1000
-      },
-      {
+    },
+    {
         "codigo": 1043,
         "tipo": "SUV",
         "marca": "Nissan",
@@ -686,8 +686,8 @@
         "precio_compra": 25000,
         "precio_venta": 30000,
         "existencia": 1500
-      }, 
-      {
+    },
+    {
         "codigo": 1044,
         "tipo": "Camioneta",
         "marca": "Nissan",
@@ -702,8 +702,8 @@
         "precio_compra": 35000,
         "precio_venta": 42000,
         "existencia": 1300
-      },
-      {
+    },
+    {
         "codigo": 1045,
         "tipo": "Crossover",
         "marca": "Nissan",
@@ -718,8 +718,8 @@
         "precio_compra": 18000,
         "precio_venta": 22000,
         "existencia": 1600
-      },
-      {
+    },
+    {
         "codigo": 1046,
         "tipo": "SUV",
         "marca": "Ford",
@@ -734,8 +734,8 @@
         "precio_compra": 38000,
         "precio_venta": 45000,
         "existencia": 600
-      },
-      {
+    },
+    {
         "codigo": 1047,
         "tipo": "Sedán",
         "marca": "Ford",
@@ -750,8 +750,8 @@
         "precio_compra": 35000,
         "precio_venta": 42000,
         "existencia": 800
-      },
-      {
+    },
+    {
         "codigo": 1048,
         "tipo": "Clásico",
         "marca": "Toyota",
@@ -766,8 +766,8 @@
         "precio_compra": 8000,
         "precio_venta": 12000,
         "existencia": 500
-      },
-      {
+    },
+    {
         "codigo": 1049,
         "tipo": "Clásico",
         "marca": "Toyota",
@@ -782,8 +782,8 @@
         "precio_compra": 10000,
         "precio_venta": 15000,
         "existencia": 400
-      },
-      {
+    },
+    {
         "codigo": 1050,
         "tipo": "Deportivo 🏎️",
         "marca": "Toyota",
@@ -798,8 +798,8 @@
         "precio_compra": 45000,
         "precio_venta": 60000,
         "existencia": 300
-      },
-      {
+    },
+    {
         "codigo": 1051,
         "tipo": "Deportivo 🏎️",
         "marca": "Toyota",
@@ -814,6 +814,135 @@
         "precio_compra": 25000,
         "precio_venta": 30000,
         "existencia": 200
+    },
+    {
+        "codigo": 5001,
+        "tipo": "Superdeportivo 🏎️",
+        "marca": "Ferrari",
+        "logo": "https://1000marcas.net/wp-content/uploads/2019/12/Ferrari-Emblema-1984.png",
+        "modelo": "Ferrari 488 GTB",
+        "caracteristicas": "Motor V8 de 660 hp, diseño aerodinámico, alto rendimiento",
+        "imagen": "https://di-uploads-pod15.dealerinspire.com/lakeforestsportscars/uploads/2019/05/Ferrari-458-Speciale.png",
+        "numeroPuertas": 2,
+        "motor": "3.9L V8",
+        "combustible": "Gasolina",
+        "categoria": "Superdeportivo",
+        "precio_compra": 280000,
+        "precio_venta": 350000,
+        "existencia": 300
+    },
+    {
+        "codigo": 5002,
+        "tipo": "Superdeportivo 🏎️",
+        "marca": "Ferrari",
+        "logo": "https://1000marcas.net/wp-content/uploads/2019/12/Ferrari-Emblema-1984.png",
+        "modelo": "Ferrari LaFerrari",
+        "caracteristicas": "Híbrido, 950 hp, aceleración impresionante, tecnología avanzada",
+        "imagen": "https://eminencesupercarhire.co.uk/wp-content/uploads/2024/01/Screenshot_5-removebg-preview-5.png",
+        "numeroPuertas": 2,
+        "motor": "6.3L V12 + Motor Eléctrico",
+        "combustible": "Híbrido",
+        "categoria": "Superdeportivo",
+        "precio_compra": 1500000,
+        "precio_venta": 2000000,
+        "existencia": 100
+    },
+    {
+        "codigo": 5003,
+        "tipo": "Superdeportivo 🏎️",
+        "marca": "Ferrari",
+        "logo": "https://1000marcas.net/wp-content/uploads/2019/12/Ferrari-Emblema-1984.png",
+        "modelo": "Ferrari 812 Superfast",
+        "caracteristicas": "Motor V12, 800 hp, tecnología avanzada, diseño deportivo",
+        "imagen": "https://www.motortrend.com/uploads/sites/5/2020/06/2020-ferrari-812-superfast.png",
+        "numeroPuertas": 2,
+        "motor": "6.5L V12",
+        "combustible": "Gasolina",
+        "categoria": "Superdeportivo",
+        "precio_compra": 350000,
+        "precio_venta": 400000,
+        "existencia": 150
+    },
+    {
+        "codigo": 5004,
+        "tipo": "Superdeportivo 🏎️",
+        "marca": "Ferrari",
+        "logo": "https://1000marcas.net/wp-content/uploads/2019/12/Ferrari-Emblema-1984.png",
+        "modelo": "Ferrari Portofino",
+        "caracteristicas": "Convertible, motor V8, 600 hp, lujo y confort",
+        "imagen": "https://images.dealer.com/ddc/vehicles/2023/Ferrari/Portofino%20M/Convertible/trim_Base_3675cb/perspective/side-left/2023_24.png",
+        "numeroPuertas": 2,
+        "motor": "3.9L V8",
+        "combustible": "Gasolina",
+        "categoria": "Convertible de lujo",
+        "precio_compra": 215000,
+        "precio_venta": 250000,
+        "existencia": 200
+    },
+    {
+        "codigo": 6003,
+        "tipo": "Superdeportivo 🏎️",
+        "marca": "Lamborghini",
+        "logo": "https://loodibee.com/wp-content/uploads/Lamborghini-Logo.png",
+        "modelo": "Lamborghini Diablo",
+        "caracteristicas": "Motor V12, 485 hp, diseño icónico de los años 90",
+        "imagen": "https://www.pngplay.com/wp-content/uploads/13/Lamborghini-Diablo-PNG-Free-File-Download.png",
+        "numeroPuertas": 2,
+        "motor": "5.7L V12",
+        "combustible": "Gasolina",
+        "categoria": "Superdeportivo",
+        "precio_compra": 250000,
+        "precio_venta": 300000,
+        "existencia": 50
       }
+      ,
+      {
+        "codigo": 6001,
+        "tipo": "Superdeportivo 🏎️",
+        "marca": "Lamborghini",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Lamborghini_Logo.svg",
+        "modelo": "Lamborghini Aventador",
+        "caracteristicas": "Motor V12, 700 hp, diseño aerodinámico y alto rendimiento",
+        "imagen": "https://static.tcimg.net/vehicles/primary/f871df3580337f76/2021-Lamborghini-Aventador-white-full_color-driver_side_front_quarter.png",
+        "numeroPuertas": 2,
+        "motor": "6.5L V12",
+        "combustible": "Gasolina",
+        "categoria": "Superdeportivo",
+        "precio_compra": 400000,
+        "precio_venta": 475000,
+        "existencia": 100
+      },{
+        "codigo": 7001,
+        "tipo": "Superdeportivo 🏎️",
+        "marca": "Bugatti",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Bugatti_logo.svg/2414px-Bugatti_logo.svg.png",
+        "modelo": "Bugatti Chiron",
+        "caracteristicas": "Motor W16, 1500 hp, velocidad máxima de 420 km/h",
+        "imagen": "https://cdn.carprices.ae/assets/api_uploads_img_trim_1686164624483_16fe430f9e.png",
+        "numeroPuertas": 2,
+        "motor": "8.0L W16",
+        "combustible": "Gasolina",
+        "categoria": "Superdeportivo",
+        "precio_compra": 3000000,
+        "precio_venta": 3500000,
+        "existencia": 100
+      },{
+        "codigo": 7002,
+        "tipo": "Superdeportivo 🏎️",
+        "marca": "Bugatti",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Bugatti_logo.svg/2414px-Bugatti_logo.svg.png",
+        "modelo": "Bugatti Divo",
+        "caracteristicas": "Motor W16, 1500 hp, diseño enfocado en la aerodinámica y el rendimiento en circuito",
+        "imagen": "https://i.ebayimg.com/images/g/khYAAOSwkA1mKkdp/s-l1200.png",
+        "numeroPuertas": 2,
+        "motor": "8.0L W16",
+        "combustible": "Gasolina",
+        "categoria": "Superdeportivo",
+        "precio_compra": 5000000,
+        "precio_venta": 5500000,
+        "existencia": 40
+      }
+      
+      
       
 ]
