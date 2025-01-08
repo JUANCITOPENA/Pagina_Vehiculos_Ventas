@@ -1,182 +1,158 @@
+/* Estilos para las tarjetas de vehículos */
 .vehicle-card {
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    width: 100%;
-    height: auto; /* Ajusta el tamaño según el contenido */
+    margin-bottom: 20px; /* Espaciado inferior entre las tarjetas */
+    border-radius: 8px; /* Bordes redondeados de las tarjetas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de profundidad */
+    transition: transform 0.3s; /* Animación de transición suave */
+    width: 100%; /* Ancho completo de la tarjeta */
+    height: auto; /* Altura ajustable según el contenido */
 }
 
 .vehicle-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Efecto de elevar la tarjeta al pasar el mouse */
 }
 
+/* Imagen principal del vehículo */
 .vehicle-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover; /* Mantiene la proporción de la imagen */
-    border-radius: 8px;
+    width: 100%; /* Imagen ocupa todo el ancho disponible */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    border-radius: 8px; /* Bordes redondeados de la imagen */
 }
 
+/* Logo de la marca del vehículo */
 .logo-image {
-    width: 80px;
-    height: auto;
-    object-fit: cover;
+    width: 80px; /* Ancho fijo para el logo */
+    height: auto; /* Mantiene proporción del logo */
+    object-fit: cover; /* Ajuste para que el logo no se deforme */
 }
 
+/* Media Query para pantallas medianas y grandes */
 @media (min-width: 768px) {
     .vehicle-card {
-        display: flex;
-        flex-direction: row;
-        padding: 15px;
+        display: flex; /* Usa diseño flexible para alinear el contenido en fila */
+        flex-direction: row; /* Ordena los elementos en fila */
+        padding: 15px; /* Espaciado interno de las tarjetas */
     }
     
     .vehicle-image {
-        width: 50%; /* La imagen ocupará la mitad de la tarjeta */
+        width: 50%; /* La imagen ocupa la mitad de la tarjeta en pantallas grandes */
     }
 }
 
+/* Estilos para el grupo de entrada de texto */
 .input-group-text {
-    background-color: #f8f9fa;
-    border-right: 1px solid #ced4da;
+    background-color: #f8f9fa; /* Fondo claro para el texto */
+    border-right: 1px solid #ced4da; /* Borde entre el texto y el campo de entrada */
 }
 
 .input-group {
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 500px; /* Ancho máximo del grupo de entrada */
+    margin: 0 auto; /* Centra horizontalmente el grupo */
 }
 
+/* Botón grande */
 .btn-lg {
-    padding: 15px 30px;
-    font-size: 18px;
+    padding: 15px 30px; /* Espaciado interno del botón */
+    font-size: 18px; /* Tamaño de fuente más grande */
 }
 
+/* Botón primario */
 .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    transition: background-color 0.3s;
+    background-color: #007bff; /* Color de fondo azul */
+    border-color: #007bff; /* Borde azul */
+    transition: background-color 0.3s; /* Transición suave al pasar el mouse */
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #004085;
+    background-color: #0056b3; /* Fondo más oscuro al pasar el mouse */
+    border-color: #004085; /* Borde más oscuro */
 }
 
+/* Botón secundario */
 .btn-secondary {
-    background-color: #6c757d;
-    border-color: #6c757d;
-    transition: background-color 0.3s;
+    background-color: #6c757d; /* Fondo gris */
+    border-color: #6c757d; /* Borde gris */
+    transition: background-color 0.3s; /* Transición suave al pasar el mouse */
 }
 
 .btn-secondary:hover {
-    background-color: #5a6268;
-    border-color: #4e555b;
+    background-color: #5a6268; /* Fondo más oscuro al pasar el mouse */
+    border-color: #4e555b; /* Borde más oscuro */
 }
 
+/* Contenido de las tarjetas */
 .vehicle-card .card-body {
-    text-align: center;
-    padding: 20px;
+    text-align: center; /* Centra el texto */
+    padding: 20px; /* Espaciado interno */
 }
 
+/* Títulos de las tarjetas */
 .vehicle-card .card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-size: 1.2rem; /* Tamaño del título */
+    font-weight: bold; /* Negrita */
+    margin-bottom: 10px; /* Espaciado inferior */
 }
 
+/* Texto de las tarjetas */
 .vehicle-card .card-text {
-    font-size: 1rem;
-    margin-bottom: 10px;
+    font-size: 1rem; /* Tamaño del texto */
+    margin-bottom: 10px; /* Espaciado inferior */
 }
 
+/* Botón de información dentro de las tarjetas */
 .vehicle-card .btn-info {
-    font-size: 1rem;
-    padding: 10px 20px;
-    border-radius: 5px;
+    font-size: 1rem; /* Tamaño del texto del botón */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
 }
 
+/* Contenido del modal */
 .modal-content {
-    border-radius: 8px;
-    padding: 30px;
-    width: 100%;
+    border-radius: 8px; /* Bordes redondeados del modal */
+    padding: 30px; /* Espaciado interno */
+    width: 100%; /* Ancho completo */
 }
 
 .modal-header {
-    border-bottom: none;
+    border-bottom: none; /* Elimina la línea inferior del encabezado */
 }
 
 .modal-footer {
-    border-top: none;
+    border-top: none; /* Elimina la línea superior del pie de página */
 }
 
+/* Configuración del modal para imágenes */
 #vehicleImageModal .modal-dialog {
-    max-width: 60%;     /* Asegura que el modal ocupe un 90% del ancho de la pantalla */
-    width: auto;        /* Hace que el modal se ajuste automáticamente */
+    max-width: 60%; /* Ancho máximo del modal */
+    width: auto; /* Ajusta automáticamente el ancho */
 }
 
 #modalVehicleImage {
-    width: 100%;         /* Hace que la imagen ocupe todo el ancho disponible */
-    max-width: 960px;   /* Limita el tamaño máximo de la imagen */
-    height: auto;        /* Mantiene la proporción de la imagen */
-    object-fit: contain; /* Ajusta la imagen para que no se deforme */
-    margin: 0 auto;      /* Centra la imagen */
+    width: 100%; /* Ancho completo de la imagen */
+    max-width: 960px; /* Tamaño máximo de la imagen */
+    height: auto; /* Mantiene la proporción */
+    object-fit: contain; /* Ajusta la imagen sin deformarla */
+    margin: 0 auto; /* Centra la imagen */
 }
 
-#vehicleImageModal .modal-content {
-    padding: 01px; /* Ajusta el padding para evitar que la imagen quede muy pegada al borde */
-}
-
-.modal-content {
-    border-radius: 8px;
-    padding: 30px;
-    width: 100%;
-}
-
-.modal-header {
-    border-bottom: none;
-}
-
-.modal-footer {
-    border-top: none;
-}
-
-/* Modal Responsivo */
-#vehicleImageModal .modal-dialog {
-    max-width: 90%;
-    width: auto;
-}
-
-#vehicleImageModal .modal-content {
-    padding: 0;
-}
-
-/* Ajustes para la imagen dentro del modal */
-#modalVehicleImage {
-    width: 100%;
-    max-width: 1000px;
-    height: auto;
-    object-fit: contain;
-    margin: 0 auto;
-}
-
-/* Media Query para pantallas grandes */
+/* Media Queries para pantallas */
 @media (min-width: 768px) {
     #vehicleImageModal .modal-dialog {
-        max-width: 80%;
+        max-width: 80%; /* Ancho máximo para pantallas medianas y grandes */
     }
 
     #modalVehicleImage {
-        max-width: 1200px;
+        max-width: 1200px; /* Tamaño máximo de la imagen */
     }
 }
 
-/* Media Query para pantallas pequeñas */
 @media (max-width: 767px) {
     #vehicleImageModal .modal-dialog {
-        max-width: 100%;
+        max-width: 100%; /* Modal ocupa todo el ancho en pantallas pequeñas */
     }
 
     #modalVehicleImage {
-        max-width: 100%;
+        max-width: 100%; /* Imagen ocupa todo el ancho disponible */
     }
 }
