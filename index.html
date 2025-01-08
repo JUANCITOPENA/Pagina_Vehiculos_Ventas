@@ -1,20 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-256/free-taxi-coche-transporte-publico-vehiculo-emoj-simbolo-30758.png?f=webp" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscador de Vehículos</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">Buscador de Vehículos</h1>
-<!DOCTYPE html>
-<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -81,46 +66,43 @@
 </div>
 
 
-
-<!-- Modal de contacto -->
-<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="contactModalLabel">Formulario de Contacto</h5>
-       
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-     
+<!-- Modal de Contacto -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="contactModalLabel">Contacto para más información</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form id="contactForm">
+                  <div class="mb-3">
+                      <label for="customerName" class="form-label">Nombre</label>
+                      <input type="text" class="form-control" id="customerName" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="customerEmail" class="form-label">Correo Electrónico</label>
+                      <input type="email" class="form-control" id="customerEmail" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="vehicleModel" class="form-label">Modelo del Vehículo</label>
+                      <select class="form-select" id="vehicleModel" required>
+                          <option value="">Seleccione un vehículo</option>
+                          <!-- Las opciones se agregarán dinámicamente -->
+                      </select>
+                  </div>
+                  <div class="mb-3">
+                      <label for="message" class="form-label">Mensaje</label>
+                      <textarea class="form-control" id="message" rows="3" required></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Enviar</button>
+              </form>
+          </div>
       </div>
-      <div class="modal-body">
-        <form id="contactForm" onsubmit="submitForm(event)">
-          <div class="form-group">
-            <label for="customerName">Nombre</label>
-            <input type="text" class="form-control" id="customerName" required>
-          </div>
-          <div class="form-group">
-            <label for="customerEmail">Correo electrónico</label>
-            <input type="email" class="form-control" id="customerEmail" required>
-          </div>
-          <div class="form-group">
-            <label for="vehicleModel">Modelo de vehículo</label>
-            <input type="text" class="form-control" id="vehicleModel" required>
-          </div>
-          <div class="form-group">
-            <label for="message">Mensaje</label>
-            <textarea class="form-control" id="message" rows="3" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
   </div>
 </div>
+
+
 
 
     <script src="script.js"></script>
@@ -132,104 +114,4 @@
     
 </body>
 
-</html>
-        <!-- Formulario de búsqueda -->
-        <div class="form-group">
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fas fa-search"></i></span>
-                </div>
-                <input type="text" id="searchInput" class="form-control" placeholder="Buscar por marca, tipo o modelo" aria-label="Buscar Vehículo">
-            </div>
-            <div class="d-flex justify-content-center mt-3">
-                <button class="btn btn-primary btn-lg mr-3" onclick="searchVehicles()">
-                    <i class="fas fa-search mr-2"></i>Buscar
-                </button>
-                <button class="btn btn-secondary btn-lg" onclick="clearSearch()">
-                    <i class="fas fa-times mr-2"></i>Limpiar
-                </button>
-            </div>
-        </div>
-
-        <!-- Tarjetas de los vehículos -->
-        <div id="vehicleCards" class="row mt-4">
-            <!-- Las tarjetas de los vehículos se mostrarán aquí -->
-        </div>
-    </div>
-
-
-    
-<!-- Modal para mostrar la imagen del vehículo -->
-<div class="modal fade" id="vehicleImageModal" tabindex="-1" aria-labelledby="vehicleImageModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg"> <!-- Se añade la clase modal-lg para hacer el modal más grande -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="vehicleImageModalLabel">Imagen del Vehículo</h5>
-                <!-- Botón de cerrar -->
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <img id="modalVehicleImage" src="" alt="Vehicle Image" class="img-fluid">
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-  
-    <!-- Modal para contacto -->
-    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="contactModalLabel">Interesado en comprar 🚗</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="customerName">Nombre:</label>
-                            <input type="text" class="form-control" id="customerName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="customerEmail">Correo Electrónico:</label>
-                            <input type="email" class="form-control" id="customerEmail" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="vehicleModel">Modelo del Vehículo:</label>
-                            <select class="form-control" id="vehicleModel" required>
-                                <!-- Las opciones se agregarán dinámicamente -->
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Mensaje:</label>
-                            <textarea class="form-control" id="message"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" onclick="submitForm()">Enviar Consulta 📨</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-
-    <!-- Scripts de Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- CSS de Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- JavaScript de Bootstrap y Popper.js (necesario para modales) -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
-</body>
 </html>
