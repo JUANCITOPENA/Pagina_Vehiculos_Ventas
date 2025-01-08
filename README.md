@@ -9,6 +9,10 @@ La aplicación obtiene los datos del catálogo desde un archivo JSON alojado en 
 
 El archivo JSON también está incluido localmente en el repositorio, ofreciendo flexibilidad para que los usuarios puedan editarlo y utilizarlo como fuente de datos interna si así lo desean. Esta dualidad permite que el proyecto sea adaptable a distintas necesidades y escenarios.
 
+### Portada:
+
+![Vehículos](assets/VEHICULOS.png)
+
 ### Características principales:
 
 - **Interfaz interactiva:** Diseño atractivo e intuitivo para facilitar la búsqueda y visualización de vehículos.
