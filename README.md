@@ -3,7 +3,21 @@
 
 ## 📝 Descripción del Proyecto | Project Overview
 
-Este proyecto es una aplicación web interactiva diseñada para mostrar y gestionar un catálogo de vehículos de manera eficiente y atractiva. Desarrollada con tecnologías web modernas, ofrece una experiencia de usuario fluida y responsiva, ideal para concesionarios, marketplaces automotrices y sitios de comercio electrónico.
+Este proyecto es una aplicación web interactiva diseñada para mostrar y gestionar un catálogo de vehículos de manera eficiente, atractiva y dinámica. Utiliza tecnologías web modernas para ofrecer una experiencia de usuario fluida, responsiva y adaptada a diversos dispositivos. Su diseño está pensado para aplicaciones como concesionarios, marketplaces automotrices y sitios de comercio electrónico.
+
+La aplicación obtiene los datos del catálogo desde un archivo JSON alojado en un repositorio de GitHub, permitiendo una consulta remota a través de una URL. Esta implementación fomenta la modularidad y la reutilización, además de habilitar el uso de protocolos web para la extracción de datos de manera eficiente.
+
+El archivo JSON también está incluido localmente en el repositorio, ofreciendo flexibilidad para que los usuarios puedan editarlo y utilizarlo como fuente de datos interna si así lo desean. Esta dualidad permite que el proyecto sea adaptable a distintas necesidades y escenarios.
+
+### Características principales:
+
+- **Interfaz interactiva:** Diseño atractivo e intuitivo para facilitar la búsqueda y visualización de vehículos.
+- **Datos centralizados:** Uso de un archivo JSON que almacena información detallada de los vehículos, como marca, modelo, características, precio y más.
+- **Consulta remota:** Implementación de una consulta por URL para extraer datos de manera eficiente y seguir protocolos web modernos.
+- **Flexibilidad:** Opción de modificar el archivo JSON localmente para personalizar el catálogo según las necesidades específicas.
+
+Este proyecto es una solución completa y práctica para la gestión y visualización de catálogos automotrices, con opciones de personalización y escalabilidad que lo hacen ideal para una amplia gama de aplicaciones en el sector automotriz.
+
 
 ### 🎯 Objetivo
 Proporcionar una plataforma intuitiva y moderna para la búsqueda y visualización de vehículos, facilitando la conexión entre vendedores y compradores potenciales.
