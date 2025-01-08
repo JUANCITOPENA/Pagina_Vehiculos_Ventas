@@ -93,15 +93,23 @@ function openContactModal(vehicleModel) {
 
 // Función para realizar la búsqueda de vehículos basándose en el texto introducido
 async function searchVehicles() {
-    const searchInput = document.getElementById('searchInput').value.toLowerCase(); // Convertimos a minúsculas el texto ingresado
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
     const filteredVehicles = vehicles.filter(vehicle => 
         vehicle.marca.toLowerCase().includes(searchInput) || 
         vehicle.modelo.toLowerCase().includes(searchInput) ||
         vehicle.tipo.toLowerCase().includes(searchInput)
     );
-    const vehicleCards = filteredVehicles.map(createVehicleCard).join(''); // Crear tarjetas de los vehículos filtrados
-    document.getElementById('vehicleCards').innerHTML = vehicleCards; // Mostrar las tarjetas filtradas
+    
+    const vehicleCards = filteredVehicles.map(createVehicleCard).join('');
+    const vehicleCardsContainer = document.getElementById('vehicleCards');
+
+    if (filteredVehicles.length === 0) {
+        vehicleCardsContainer.innerHTML = '<p>No se encontraron vehículos que coincidan con tu búsqueda.</p>';
+    } else {
+        vehicleCardsContainer.innerHTML = vehicleCards;
+    }
 }
+
 
 // Función para limpiar la búsqueda y recargar todos los vehículos
 function clearSearch() {
