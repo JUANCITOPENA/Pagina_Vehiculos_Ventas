@@ -13,7 +13,7 @@ El archivo JSON también está incluido localmente en el repositorio, ofreciendo
 
 ![Vehículos](VEHICULOS.png)
 
-![Vehículos 1](MOVIL1.png) ![Vehículos 2](MOVIL2.png)
+![Vehículos 1](movil1.png) ![Vehículos 2](movil2.png)
 
 
 ### Características principales:
