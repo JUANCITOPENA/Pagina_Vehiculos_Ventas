@@ -26,12 +26,12 @@ Proporcionar una plataforma intuitiva y moderna para la búsqueda y visualizaci�
 - Layout flexible con Flexbox
 - Media queries estratégicos
 
-## 🛠️ Tecnologías Utilizadas | Tech Stack
+### 🚀 Tecnologías Utilizadas
 
-### Frontend
-- HTML5
-- CSS3 (Flexbox/Grid)
-- JavaScript (ES6+)
+- **HTML5**: Estructura de la página.
+- **CSS3**: Estilos visuales y animaciones.
+- **JavaScript**: Lógica de la aplicación.
+- **JSON**: Almacenamiento de datos de vehículos.
 
 ### Frameworks & Librerías
 - Bootstrap 5.3
@@ -42,13 +42,9 @@ Proporcionar una plataforma intuitiva y moderna para la búsqueda y visualizaci�
 ```
 /buscador-vehiculos
 ├── 📄 index.html          # Estructura principal
-├── 📁 assets/
-│   ├── 🎨 css/
-│   │   └── styles.css     # Estilos y animaciones
-│   ├── 📜 js/
-│   │   └── script.js      # Lógica de la aplicación
-│   └── 📸 img/           # Imágenes y recursos
-├── 📚 data/
+├── 🎨 styles.css     # Estilos y animaciones
+│   📜 script.js      # Lógica de la aplicación
+├── 📚 data viene de Github url en el js:
 │   └── vehicles.json      # Datos de vehículos
 └── 📋 README.md          # Documentación
 ```
@@ -130,9 +126,9 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE.md](LICENSE.m
 
 ## 📞 Contacto | Contact
 
-- 👨‍💻 [Tu Nombre](https://github.com/tu-usuario)
-- 📧 Email: tu.email@ejemplo.com
-- 🌐 Website: [www.tuwebsite.com](http://www.tuwebsite.com)
+- 👨‍💻 [JUANCITOPENA](https://github.com/JUANCITOPENA)
+- 📧 Email: juancito.pena@gmail.com
+
 
 ## ⭐ Agradecimientos | Acknowledgments
 
@@ -141,4 +137,4 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE.md](LICENSE.m
 - Comunidad Open Source
 
 ---
-⌨️ con ❤️ por [Tu Nombre](https://github.com/tu-usuario) 😊
+⌨️ con ❤️ por [JUANCITO PENA](https://github.com/JUANCITOPENA) 😊
