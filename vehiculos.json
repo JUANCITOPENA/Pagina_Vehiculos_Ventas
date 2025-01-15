@@ -1327,6 +1327,54 @@
     "precio_compra": 50000,
     "precio_venta": 58000,
     "existencia": 90
+  },
+      {
+    "codigo": 1083,
+    "marca": "Bugatti",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Bugatti_logo.svg/2560px-Bugatti_logo.svg.png",
+    "tipo": "Híperdeportivo 🏎️",
+    "modelo": "Bugatti Divo",
+    "caracteristicas": "Diseño aerodinámico, motor W16, producción limitada",
+    "imagen": "https://www.driva.com.au/static/25481a08d4cf0165bedaf7424ddf99e3/9e8a7/66cebc73-a717-4603-96b8-32ad88d05e1a_5a3aa8b9764983.18250154151379372148459565.png",
+    "numeroPuertas": 2,
+    "motor": "8.0L W16 Quad-Turbo",
+    "combustible": "Gasolina",
+    "categoria": "Híperdeportivo",
+    "precio_compra": 5000000,
+    "precio_venta": 5800000,
+    "existencia": 2
+  },
+  {
+    "codigo": 1084,
+    "marca": "Bugatti",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Bugatti_logo.svg/2560px-Bugatti_logo.svg.png",
+    "tipo": "Híperdeportivo 🏎️",
+    "modelo": "Bugatti Centodieci",
+    "caracteristicas": "Homenaje al EB110, motor W16, edición limitada a 10 unidades",
+    "imagen": "https://cdn.carprices.ae/assets/api_uploads_img_trim_1686164624483_16fe430f9e.png",
+    "numeroPuertas": 2,
+    "motor": "8.0L W16 Quad-Turbo",
+    "combustible": "Gasolina",
+    "categoria": "Híperdeportivo",
+    "precio_compra": 8000000,
+    "precio_venta": 9000000,
+    "existencia": 1
+  },
+  {
+    "codigo": 1085,
+    "marca": "Bugatti",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Bugatti_logo.svg/2560px-Bugatti_logo.svg.png",
+    "tipo": "Híperdeportivo 🏎️",
+    "modelo": "Bugatti La Voiture Noire",
+    "caracteristicas": "Diseño único, motor W16, el coche más caro del mundo",
+    "imagen": "https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2019/05/01/941493.jpg",
+    "numeroPuertas": 2,
+    "motor": "8.0L W16 Quad-Turbo",
+    "combustible": "Gasolina",
+    "categoria": "Híperdeportivo",
+    "precio_compra": 11000000,
+    "precio_venta": 12000000,
+    "existencia": 1
   }
       
 ]
