@@ -118,7 +118,7 @@
         "tipo": "SUV 🚙",
         "modelo": "Toyota RAV4",
         "caracteristicas": "Estilo deportivo, ideal para la aventura",
-        "imagen": "https://deltacomercial.com.do/cdn/modelos/rav4/43670b4254bab43b747ec25fbfdf3713.png",
+        "imagen": "https://www.autotropical.com/toyota/wp-content/uploads/2024/09/RAV4-FOTO.png",
         "numeroPuertas": 4,
         "motor": "2.5L",
         "combustible": "Gasolina",
@@ -182,7 +182,7 @@
         "tipo": "Furgoneta 🚐",
         "modelo": "Mercedes-Benz Sprinter",
         "caracteristicas": "Gran capacidad de carga, ideal para negocios",
-        "imagen": "https://www.motortrend.com/uploads/sites/10/2018/04/2018-mercedes-benz-sprinter-2500-170-wb-high-roof-passenger-van-angular-front.png",
+        "imagen": "https://d2v1gjawtegg5z.cloudfront.net/uploads/files/001/373/855/original/FEATURED_Freedom170_EXT.png_%281%29.png?1742908100",
         "numeroPuertas": 4,
         "motor": "2.1L",
         "combustible": "Diesel",
@@ -614,7 +614,7 @@
         "tipo": "SUV de lujo 🚙",
         "modelo": "Mercedes-Benz G-Class",
         "caracteristicas": "Motor V8, 577 hp, tracción total, lujo y rendimiento",
-        "imagen": "https://www.motortrend.com/uploads/sites/10/2019/04/2019-mercedes-benz-g-class-550-suv-angular-front.png",
+        "imagen": "https://d102sycao8uwt8.cloudfront.net/large_armored_mercedes_benz_g63_amg_class_7403_fe57ce248c.png",
         "numeroPuertas": 5,
         "motor": "4.0L V8 Biturbo",
         "combustible": "Gasolina Premium",
@@ -630,7 +630,7 @@
         "tipo": "Sedán de lujo 🚗",
         "modelo": "Mercedes-Benz S-Class",
         "caracteristicas": "Motor V8, 496 hp, tecnología avanzada, interior de lujo",
-        "imagen": "https://www.motortrend.com/uploads/sites/10/2019/12/2020-mercedes-benz-s-class-s450-sedan-angular-front.png",
+        "imagen": "https://cka-dash.s3.amazonaws.com/165-1120-MA222/model1.png",
         "numeroPuertas": 4,
         "motor": "4.0L V8 Biturbo",
         "combustible": "Gasolina Premium",
@@ -646,7 +646,7 @@
         "tipo": "Coupé deportivo 🚗",
         "modelo": "Mercedes-Benz AMG GT",
         "caracteristicas": "Motor V8, 523 hp, tracción trasera, diseño agresivo y deportivo",
-        "imagen": "https://65e81151f52e248c552b-fe74cd567ea2f1228f846834bd67571e.ssl.cf1.rackcdn.com/ldm-images/2021-Mercedes-Benz-AMG-GT-color-Designo-Selenite-Grey-Magno.png",
+        "imagen": "https://vehicle-images.dealerinspire.com/stock-images/thumbnails/large/chrome/0fd4cfa4032aea23a2d56d36889c150f.png",
         "numeroPuertas": 2,
         "motor": "4.0L V8 Biturbo",
         "combustible": "Gasolina Premium",
@@ -1319,7 +1319,7 @@
     "tipo": "Convertible 🌟",
     "modelo": "Lexus IS C",
     "caracteristicas": "Convertible, elegante, diseño premium",
-    "imagen": "https://65e81151f52e248c552b-fe74cd567ea2f1228f846834bd67571e.ssl.cf1.rackcdn.com/Lexus/Comparisons/2021-Lexus-IS-350-F-Sport-comp.png",
+    "imagen": "https://platform.cstatic-images.com/in/v2/stock_photos/36b70bb5-e826-4f35-b0e2-66e99509311d/621a8014-5c58-45cb-95ca-f5b84e819575.png",
     "numeroPuertas": 2,
     "motor": "2.5L V6",
     "combustible": "Gasolina",
@@ -1378,3 +1378,4 @@
   }
       
 ]
+
